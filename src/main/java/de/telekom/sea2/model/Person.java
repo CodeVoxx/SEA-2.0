@@ -9,13 +9,27 @@ import de.telekom.sea2.lookup.Salutation;
 
 public class Person {
 	
-	
-	
-	private long id;
-	private Salutation salutation;
-    private String firstname;
+	private String firstname;
     private String lastname;
-    
+    private long id;
+	private Salutation salutation;
+		
+		
+    public Person(long id, Salutation salutation, String firstname, String lastname) {
+//		super();		// super = übergeordnete Klasse = java.lang.Object
+		this.id = id;
+		this.salutation = salutation;
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
+
+    public Person(long id, String salutation, String firstname, String lastname) {
+//		super();		// super = übergeordnete Klasse = java.lang.Object
+		this.id = id;
+		this.salutation = Salutation.fromString(salutation);	
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
     
     public Person() {
     } 

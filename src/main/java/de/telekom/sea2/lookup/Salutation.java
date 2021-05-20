@@ -1,8 +1,14 @@
+// **********************
+// **      SEA-2.0     **
+// **    Salutation    ** 
+// **********************
+
+
 package de.telekom.sea2.lookup;
 
 public enum Salutation {
 
-	MR, MRS, OTHER;
+	MRS, MR, OTHER;
 
 	public static Salutation fromString(String string) {
 
@@ -33,14 +39,41 @@ public enum Salutation {
 	public String toString() {
 		switch (this) {
 		case MRS:
-			return "Frau";
+			return "MRS";
 		case MR:
-			return "Herr";
+			return "MR";
 		case OTHER:
-			return "Divers";
+			return "OTHER";
 		default:
 			throw new IllegalArgumentException("Unexpected case!");
 		}
+	}
+	
 
+	public Byte toByte() {
+		switch (this) {
+		case MRS:
+			return 0;
+		case MR:
+			return 1;
+		case OTHER:
+			return 2;
+		default:
+			throw new IllegalArgumentException("Unexpected case!");
+		}
+	}
+
+	public static Salutation fromByte(Byte bite) {
+
+		switch (bite) {
+		case 0:
+			return MRS;
+		case 1:
+			return MR;
+		case 2:
+			return OTHER;
+		default:
+			throw new IllegalArgumentException("Unexpected value.");
+		}
 	}
 }
