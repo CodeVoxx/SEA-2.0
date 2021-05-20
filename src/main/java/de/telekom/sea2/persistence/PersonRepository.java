@@ -57,9 +57,8 @@ public class PersonRepository {
 
 // Einlesen des Resultset in einzelne Felder und Zuweisung in person
 			Person person = new Person(resultSet.getLong(1), Salutation.fromByte(resultSet.getByte(2)), // konvertierung
-																										// der Byte in
-																										// Salutation
-					resultSet.getString(3), resultSet.getString(4));
+				resultSet.getString(3), resultSet.getString(4));										// Salutation
+			                                                                                            // der Byte in
 			return person;
 		} else {
 			return null;
@@ -78,11 +77,10 @@ public class PersonRepository {
 		resultSet = statement.executeQuery("select * from personen");
 
 		while (resultSet.next()) {
-
-		
+	
 			// Einlesen des Resultset in einzelne Felder und Zuweisung in person
 			Person person = new Person(resultSet.getLong(1), Salutation.fromByte(resultSet.getByte(2)), // konvertierung
-					resultSet.getString(3), resultSet.getString(4));																				// der Byte in
+					resultSet.getString(3), resultSet.getString(4));									// der Byte in
 					arrayList.add(person);
 		}
 			return arrayList;
