@@ -45,7 +45,7 @@ public enum Salutation {
 		case OTHER:
 			return "OTHER";
 		default:
-			throw new IllegalArgumentException("Unexpected case!");
+			throw new IllegalArgumentException("Unexpected case " + this);
 		}
 	}
 	
@@ -59,7 +59,7 @@ public enum Salutation {
 		case OTHER:
 			return 2;
 		default:
-			throw new IllegalArgumentException("Unexpected case!");
+			throw new IllegalArgumentException("Unexpected case " + this);
 		}
 	}
 
