@@ -64,7 +64,6 @@ public enum Salutation {
 	}
 
 	public static Salutation fromByte(Byte bite) {
-
 		switch (bite) {
 		case 0:
 			return MRS;
