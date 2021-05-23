@@ -17,83 +17,86 @@ public class SeminarApp {
 
 		PersonRepository personRepository = new PersonRepository();
 
-		
-		
 // Select by ID
 		try {
 			personRepository.dbInit();
-			
+
 			Person person = personRepository.get(13);
 			String string = String.format("%s %s %s %s", person.getId(), person.getSalutation(), person.getFirstname(),
 					person.getLastname());
 			System.out.println(string);
 		} catch (Exception e) {
-					e.printStackTrace();
+			e.printStackTrace();
 		}
-	
+
 // Delete
 
 		try {
-			boolean result = personRepository.delete(13);
+			boolean result = personRepository.delete(3);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	
-		
+
 // Create - Benutzer hinzufügen
-		
-		long id= 13;
-		String salutation =	"MR";
-		String firstName =	"Gerd";
+
+		long id = 0L;  // Dummy, da maxId in PersonRepository gesetzt wird.
+		String salutation = "MRS";
+		String firstName = "Marion";
 		String lastName = "Barodte";
-		
-		Person person1 = new Person (id, salutation, firstName, lastName);
+
+		Person person1 = new Person(id, salutation, firstName, lastName);
 		try {
 			personRepository.dbInit();
 			Boolean result = personRepository.create(person1);
-			System.out.println("___________________________________________________________________");	
+			System.out.println("___________________________________________________________________");
 			System.out.println(result);
 			System.out.println("___________________________________________________________________");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-			
-// Update - Benutzer Update
-		
-				long id2= 1;
-				String salutation2 =	"MR";
-				String firstName2 =	"Aaanton";
-				String lastName2 = "Aaaanonius";
-				
-				Person person2 = new Person (id2, salutation2, firstName2, lastName2);
-				try {
-					personRepository.dbInit();
-					Boolean result = personRepository.update(person2);
-					System.out.println("___________________________________________________________________");	
-					System.out.println(result);
-					System.out.println("___________________________________________________________________");
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		
-// Select all
-	
-			try {
-		ArrayList personListAll = personRepository.getAll();
-		for (int i = 0; i < personListAll.size(); i++) {
-			Person person = (Person) personListAll.get(i);
-			// System.out.println(person.getFirstname());
-			String string = String.format("%s %s %s %s", person.getId(), person.getSalutation(), person.getFirstname(),
-					person.getLastname());
-			System.out.println(string);
-		}
-	} catch(
-	Exception e)
-	{
-		e.printStackTrace();
-	}
 
-}
+// Update - Benutzer Update
+
+		long id2 = 12L;
+		String salutation2 = "MR";
+		String firstName2 = "Aaanton";
+		String lastName2 = "Aaaanonius";
+
+		Person person2 = new Person(id2, salutation2, firstName2, lastName2);
+		try {
+			personRepository.dbInit();
+			Boolean result = personRepository.update(person2);
+			System.out.println("___________________________________________________________________");
+			System.out.println(result);
+			System.out.println("___________________________________________________________________");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+// Select all
+
+		try {
+			ArrayList personListAll = personRepository.getAll();
+			for (int i = 0; i < personListAll.size(); i++) {
+				Person person = (Person) personListAll.get(i);
+				// System.out.println(person.getFirstname());
+				String string = String.format("%s %s %s %s", person.getId(), person.getSalutation(),
+						person.getFirstname(), person.getLastname());
+				System.out.println(string);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+// Delete All
+
+//		try {
+//			boolean result = personRepository.deleteAll();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//
+	}
 }
