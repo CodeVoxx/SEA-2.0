@@ -32,11 +32,11 @@ public class Together<T, U> { // T & U sind generische Datentypen-Platzhalter
 		this.u = u;
 	}
 
-	public void test() {
-
-		Together<String, String> together = new Together<String, String>();
-		together.join("Erika", "Hans");
-	}
+//	public void test() {
+//
+//		Together<String, String> together = new Together<String, String>();
+//		together.join("Erika", "Hans");
+//	}
 
 	@Override
 	public String toString() {
@@ -52,7 +52,10 @@ public class Together<T, U> { // T & U sind generische Datentypen-Platzhalter
 
 	@Override
 	public boolean equals(Object obj) {
-		return obj.equals(this);
+		if (!(obj instanceof Together)) {
+			return false;
+		}
+		return hashCode()==obj.hashCode();
 	}
 	
 	public void split(Object obj) {
