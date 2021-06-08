@@ -71,16 +71,16 @@ public class TogetherTest {
 		assertEquals(true, result2);
 	}
 	
-	@Test
-	void split_test() {
-		// Arrange
-		Together<String, String> cut = new Together<String, String>();
-		// Act
-		boolean result = cut.split();
-		// Assert
-		assertEquals(null, cut.getT());
-		assertEquals(null, cut.getU());
-	}
+//	@Test
+//	void split_test() {
+//		// Arrange
+//		Together<String, String> cut = new Together<String, String>();
+//		// Act
+//		boolean result = cut.split();
+//		// Assert
+//		assertEquals(null, cut.getT());
+//		assertEquals(null, cut.getU());
+//	}
 	@Test
 	void joinTest2 () {
 		// Arrange

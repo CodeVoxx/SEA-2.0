@@ -58,10 +58,10 @@ public class Together<T, U> { // T & U sind generische Datentypen-Platzhalter
 		return hashCode()==obj.hashCode();
 	}
 	
-	public void split(Object obj) {
-		this.t=null;
-		this.u=null;
-	}
+//	public void split(Object obj) {
+//		this.t=null;
+//		this.u=null;
+//	}
 
 	
 }
